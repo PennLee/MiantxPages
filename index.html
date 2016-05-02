@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>棉天下</title>
+    <link rel="icon" href="images/index/micon.png"/>
+<link href="css/index.css" rel="stylesheet">
+    <script src="javascript/jquery-1.8.3.js"></script>
+
+<script type="text/javascript">
+    
+    function wAlert(){
+        window.alert("您的采购需求信息已成功提交，交易专员会尽快与您联系。");
+    }
+    function showBg2() {
+        var bh = $("body").height();
+        var bw = $("body").width();
+        $(".fullbg").css({
+        "height": bh,
+        "width": bw,
+        "display":"block"
+        });
+        $(".dialog2").show();
+        }
+    
+    function showBg3(){
+        var bh = $("body").height();
+        var bw = $("body").width();
+        $(".fullbg").css({
+        "height": bh,
+        "width": bw,
+        "display":"block"
+        });
+        $(".dialog3").slideToggle("normal");
+    }
+    function closeBg() {
+        $(".fullbg,.dialog,.dialog2").hide();
+}
+    function closeBg2(){
+        $(".fullbg").hide();
+        $(".dialog3").slideToggle("normal");
+    }
+    var t=t1=t2=t3 = n=n1=n2=n3 = 0,count,count1,count2,count3;
+    $(document).ready(function () {
+        $(window).scroll(function(){
+            if($(document).scrollTop()>50){
+                $("div.infobox,div.navbox").addClass("nodisplay");
+            }else{
+                $("div.infobox,div.navbox").removeClass("nodisplay");
+            }
+        })
+        
+        $("div.erweima1").hover(function(){
+            $("div.erweima").toggle();
+        })
+        
+        count=$("div.pic").length;
+        $("div:not(:first-child).pic").hide();
+        $("a.abtn").click(function(){
+            var i = $("a#" + $(this).attr("id")).index();
+            n = i;
+            if(i >=count) return;
+            $("div.pic").filter(":visible").fadeOut(500).parent().children().eq(i).fadeIn(1000);
+            $(this).addClass("cur").siblings().removeClass("cur");   
+        });
+        t = setInterval("showAuto()",4000);
+        $("div.screenimgbox").hover(function(){clearInterval(t)},function(){t = setInterval("showAuto()",4000);}
+        );  
+        
+        count1=$("div.pic1").length;
+        $("div:not(:first-child).pic1").hide();
+        $("a.abtn1").click(function(){
+            var i1 = $("a#" + $(this).attr("id")).index();
+            n1 = i1;
+            if(i1 >=count1) return;
+            $("div.pic1").filter(":visible").fadeOut(500).parent().children().eq(i1).fadeIn(1000);
+            $(this).addClass("cur").siblings().removeClass("cur");   
+        });
+        t1 = setInterval("showAuto1()",6000);
+        $("div.pic-show1").hover(function(){clearInterval(t1)},function(){t1 = setInterval("showAuto1()",6000);}
+        ); 
+        
+        count2=$("div.pic2").length;
+        $("div:not(:first-child).pic2").hide();
+        $("a.abtn2").click(function(){
+            var i2 = $("a#" + $(this).attr("id")).index();
+            n2 = i2;
+            if(i2 >=count2) return;
+            $("div.pic2").filter(":visible").fadeOut(500).parent().children().eq(i2).fadeIn(1000);
+            $(this).addClass("cur").siblings().removeClass("cur");   
+        });
+        t2 = setInterval("showAuto2()",6000);
+        $("div.pic-show2").hover(function(){clearInterval(t2)},function(){t2 = setInterval("showAuto2()",6000);}
+        ); 
+        
+        count3=$("div.pic3").length;
+        $("div:not(:first-child).pic3").hide();
+        $("a.abtn3").click(function(){
+            var i3 = $("a#" + $(this).attr("id")).index();
+            n3 = i3;
+            if(i3 >=count3) return;
+            $("div.pic3").filter(":visible").fadeOut(500).parent().children().eq(i3).fadeIn(1000);
+            $(this).addClass("cur").siblings().removeClass("cur");   
+        });
+        t3 = setInterval("showAuto3()",6000);
+        $("div.pic-show3").hover(function(){clearInterval(t3)},function(){t3 = setInterval("showAuto3()",6000);}
+        ); 
+    });
+    function showAuto(){
+            n = n >= (count-1) ? 0 : ++n;
+            $("a.abtn").eq(n).trigger("click");
+        } 
+    function showAuto1(){
+            n1 = n1 >= (count1-1) ? 0 : ++n1;
+            $("a.abtn1").eq(n1).trigger("click");
+        } 
+    function showAuto2(){
+            n2 = n2 >= (count2-1) ? 0 : ++n2;
+            $("a.abtn2").eq(n2).trigger("click");
+        } 
+    function showAuto3(){
+            n3 = n3 >= (count3-1) ? 0 : ++n3;
+            $("a.abtn3").eq(n3).trigger("click");
+        } 
+    
+    
+    
+
+    
+</script>
+
+</head>
+<body>
+<div class="fullbg"></div>
+<div class="dialog2">
+    <p class="close"><a href="javascript:closeBg();">╳</a></p>
+    您的委托采购需求
+    <div><textarea class="weituotext" placeholder="请尽可能详细的填写您需要采购棉花的：仓库地区要求、棉花品级要求、拟采购数量、是否紧急采购等信息，方便交易专员更快捷为您服务。"></textarea></div>
+    联系方式
+    <div>
+        　　　　　<input placeholder="联系人" class="text2" type="text" name="cangku">　*
+    </div>
+    <div>
+       　　　　　<input placeholder="手机或电话" class="text2" type="text" name="pihao">　*
+    </div>
+    <div>
+       　　　　　<input placeholder="公司名称" class="text2" type="text" name="jiage">　*
+    </div>
+    <div>
+        　　　　　<input onclick="wAlert()" class="button2" type="submit" value="提    交">
+    </div>
+</div> 
+    <div class="dialog3">
+        <p class="dlpf">意见反馈<a href="javascript:closeBg2();">╳</a></p>
+        <div class="dline">
+            反馈内容
+        </div>
+        <div class="dline">
+            <textarea class="dtext" placeholder="欢迎提出您在使用过程中遇到的问题或宝贵建议（400字以内），感谢您的支持"></textarea>
+        </div>
+        <div>
+            <input type="button" value="截图">　　　点我，可以在当前页面截图哦
+        </div>
+        <div class="dline">
+            联系方式
+        </div>
+        <div class="dline">
+            <textarea class="dtext" placeholder="请留下您的联系方式，以便我们及时回复您"></textarea>
+        </div>
+        <div class="dline">
+            <input class="dbtn" type="button" value="提交反馈">
+        </div>
+    </div>
+    <div class="dialog4">
+        <div>
+            <a class="dbtn1" href="javascript:showBg3()">反馈<br>建议</a>
+        </div>
+        <div>
+            <a class="dbtn1" href="#">回到<br>顶部</a>
+        </div>
+    </div>
+<div class="top">
+    <div class="infobox">
+        <div class="topinfo">
+            <div class="phonebox">
+                <span class="topfont">棉天下，欢迎您
+                <a class="login" href="javascript:void(0);">登录</a>
+                <a class="register" href="javascript:void(0);">注册</a>  
+                <a class="user" href="javascript:void(0);">我的棉天下</a>    
+            </span>
+            </div>
+            <div class="userbox">
+                <span class="phone topfont">服务时间：工作日08:00-20:00</span>
+            </div>
+        </div>
+    </div>
+    <div class="logo-searchbox">
+        <div class="sbox">
+            <div class="logobox">
+                <img src="images/index/logo.png" alt="logo"/>
+            </div>
+            <div class="searchbox">
+                <img src="images/index/search.png" alt="search" class="searchicon"/>
+                <input type="text" class="text" placeholder="输入11位批号查询详细指标或关键字"/>
+                <input type="button" class="button" value="搜全网"/>
+                <img class="shopingicon" src="images/index/shoppingicon.png" alt="icon"/>
+            </div>
+        </div>
+    </div>
+    <div class="navbox">
+            <ul class="nav">
+                <li>
+                    <a class="nava" href="javascript:void(0);">棉花大卖场</a>
+
+                    <div class="pdbox">
+                        <a href="javascript:void(0);">新疆棉</a>
+                        <a href="javascript:void(0);">进口棉</a>
+                        <a href="javascript:void(0);">地产棉</a>
+                        <a href="javascript:void(0);">长绒棉</a>
+                    </div>
+
+                </li>
+                <li><a class="nava active" href="javascript:void(0);">首页</a></li>
+                <li><a class="nava" href="javascript:void(0);">棉花商城</a></li>
+                <li><a class="nava" href="javascript:void(0);">求购报价</a></li>
+                <li><a class="nava" href="javascript:void(0);">物流中心</a></li>
+            </ul>
+        </div>
+</div>    
+<div class="header">
+    
+    <div class="screenbox">
+        
+        <div class="screenimgbox">
+            <div class="carouselBox">
+                <div class="pic-show">
+                    <div class="pic">
+                        <img src="images/index/nemo.jpg">
+                    </div>
+                    <div class="pic">
+                        <img src="images/index/toystory.jpg">
+                    </div>
+                    <div class="pic">
+                        <img src="images/index/up.jpg">
+                    </div>
+                    <div class="pic">
+                        <img src="images/index/walle.jpg">
+                    </div>
+                </div>
+            </div>
+            <div class="btnbox">
+                <a id="a1" class="abtn cur" href="javascript:void(0);"></a>
+                <a id="a2" class="abtn" href="javascript:void(0);"></a>
+                <a id="a3" class="abtn" href="javascript:void(0);"></a>
+                <a id="a4" class="abtn" href="javascript:void(0);"></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bodyer">
+    <div class="helpbox">
+        <div class="helper">
+            <textarea onclick="showBg2()" name="text1" placeholder="详细填写下您的真实需求，剩下的就交给我们吧！" id="text1"></textarea>
+            <input onclick="showBg2()" type="button" class="button" value="帮我找"/>
+            <div class="erweima">
+                <div class="pos_rel">
+                    <img src="images/index/erweima.png">
+                    <span class="icon1"><span class="icon2"></span></span></div>
+            </div>
+            <div class="erweima1"></div>
+        </div>
+    </div>
+    <div class="productbox">
+        <ul>
+            <li>
+                <div class="pic-show1">
+                    <div class="pic1">
+                        <img src="images/index/P1/img1.jpg" alt="产品1" class="cover"/>
+                    </div>
+                    <div class="pic1">
+                        <img src="images/index/P1/img2.jpg" alt="产品1" class="cover"/>
+                    </div>
+                    <div class="pic1">
+                        <img src="images/index/P1/img3.jpg" alt="产品1" class="cover"/>
+                    </div>
+                    <div class="btnbox2">
+                        <a id="b1" class="abtn1 cur" href="javascript:void(0);"></a>
+                        <a id="b2" class="abtn1" href="javascript:void(0);"></a>
+                        <a id="b3" class="abtn1" href="javascript:void(0);"></a>
+                    </div>
+                </div>
+
+                <p class="title">我要买棉花</p>
+
+                <p class="info">数百万吨棉花数据、价格、库存<br>真实有效，精准筛选<br>免费人工找货<br>专业交易人员一对一贴心服务</p>
+
+                <div class="btnbox">
+                    <a href="javascript:void(0)" class="a aleft">去棉花商城</a>
+                    <a href="javascript:showBg2()" class="a aright">委托人工找货</a>
+                </div>
+
+            </li>
+            <li>
+                <div class="pic-show2">
+                    <div class="pic2">
+                        <img src="images/index/P2/img1.jpg" alt="产品1" class="cover"/>
+                    </div>
+                    <div class="pic2">
+                        <img src="images/index/P2/img2.jpg" alt="产品1" class="cover"/>
+                    </div>
+                    <div class="pic2">
+                        <img src="images/index/P2/img3.jpg" alt="产品1" class="cover"/>
+                    </div>
+                    <div class="btnbox2">
+                        <a id="c1" class="abtn2 cur" href="javascript:void(0);"></a>
+                        <a id="c2" class="abtn2" href="javascript:void(0);"></a>
+                        <a id="c3" class="abtn2" href="javascript:void(0);"></a>
+                    </div>
+                </div>
+
+                <p class="title">我要卖棉花</p>
+
+                <p class="info">数千家棉花采购企业在线找货<br>汇聚海量商机<br>每天多条实时采购需求<br>免费报价</p>
+
+                <div class="btnbox">
+                    <a href="javascript:void(0)" class="a aleft">去发布资源</a>
+                    <a href="javascript:void(0)" class="a aright">去报价</a>
+                </div>
+
+            </li>
+            <li>
+                <div class="pic-show3">
+                    <div class="pic3">
+                        <img src="images/index/P3/img1.jpg" alt="产品1" class="cover"/>
+                    </div>
+                    <div class="pic3">
+                        <img src="images/index/P3/img2.jpg" alt="产品1" class="cover"/>
+                    </div>
+                    <div class="pic3">
+                        <img src="images/index/P3/img3.jpg" alt="产品1" class="cover"/>
+                    </div>
+                    <div class="btnbox2">
+                        <a id="d1" class="abtn3 cur" href="javascript:void(0);"></a>
+                        <a id="d2" class="abtn3" href="javascript:void(0);"></a>
+                        <a id="d3" class="abtn3" href="javascript:void(0);"></a>
+                    </div>
+                </div>
+
+                <p class="title">我要找物流</p>
+
+                <p class="info">专业物流后台支撑<br>免费、快速为您寻找最优质的承运商<br>安全可靠</p>
+
+                <div class="btnbox">
+                    <a href="javascript:void(0)" class="a aleft1">去物流中心免费找车</a>
+                </div>
+
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="footbox">
+        <div class="imgbox2">
+            <img style="width:140px;height:120px;" src="images/index/logo2.png">
+        </div>
+        <ul>
+            <li>
+                <div class="titlebox">
+                    <i class="icon icon1"></i>
+                    <span class="title">我要买棉花</span>
+                </div>
+                <a class="alink" href="javascript:void(0);">我是买家，如何找货？</a>
+                <a class="alink" href="javascript:void(0);">商城采购流程</a>
+                <a class="alink" href="javascript:void(0);">通过微信找货</a>
+                <a class="alink" href="javascript:void(0);">在线找车</a>
+            </li>
+            <li>
+                <div class="titlebox">
+                    <i class="icon icon2"></i>
+                    <span class="title">我要卖棉花</span>
+                </div>
+                <a class="alink" href="javascript:void(0);">我是卖家，如何销售？</a>
+                <a class="alink" href="javascript:void(0);">资源上传流程</a>
+                <a class="alink" href="javascript:void(0);">卖家如何直接报价？</a>
+                <a class="alink" href="javascript:void(0);">如何吸引更多买家？</a>
+            </li>
+            <li>
+                <div class="titlebox">
+                    <i class="icon icon3"></i>
+                    <span class="title">网站导航</span>
+                </div>
+                <a class="alink" href="javascript:void(0);">注册账号/登录网站</a>
+                <a class="alink" href="javascript:void(0);">无法登录/忘记密码</a>
+                <a class="alink" href="javascript:void(0);">会员中心</a>
+                <a class="alink" href="javascript:void(0);">修改账户设置</a>
+            </li>
+        </ul>
+        <div class="imgbox">
+            <img src="images/index/img4.jpg" alt="kefu"/>
+        </div>
+    </div>
+    <div class="linfobox">
+        <div class="linfo">
+            <a href="javascript:void(0);">关于我们</a>
+            <a href="javascript:void(0);">法律声明</a>
+            <a href="javascript:void(0);">诚聘英才</a>
+            <a href="javascript:void(0);">联系我们</a>
+            <a href="javascript:void(0);">友情链接</a>
+        </div>
+        <p class="linfo2">
+            Copyright&nbsp;&nbsp;©&nbsp;&nbsp;2013-2015&nbsp;&nbsp;棉天下版权所有&nbsp;&nbsp;川ICP证100205号&nbsp;&nbsp;川ICP备09043401号
+        </p>
+    </div>
+</div>
+
+
+
+</body>
+</html>

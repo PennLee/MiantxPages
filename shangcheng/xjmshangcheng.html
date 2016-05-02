@@ -1,0 +1,700 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "
+http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+    <link rel="icon" href="../images/index/micon.png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="../css/shangcheng.css" rel="stylesheet">
+<title>棉天下</title>
+<script src="../javascript/jquery-1.8.3.js"></script>   
+<script type="text/javascript">
+    $(function(){
+        $(window).scroll(function(){
+            if($(document).scrollTop()>50){
+                $("div.infobox,div.navbox").addClass("nodisplay");
+            }else{
+                $("div.infobox,div.navbox").removeClass("nodisplay");
+            }
+        })
+        
+        $("a.shopbtn1").click(function(){
+            window.confirm("确认清空？")
+        })
+        $("a#a1").click(function(){
+            $("a#a1 i").toggleClass("icon4");
+        })
+        $("a#a2").click(function(){
+            $("a#a2 i").toggleClass("icon4").toggleClass("icon5");
+        })
+        $("a#a3").click(function(){
+            $("a#a3 i").toggleClass("icon4").toggleClass("icon5");
+        })
+        $("a#a4").click(function(){
+            $("a#a4 i").toggleClass("icon4").toggleClass("icon5");
+        })
+        $("a#a1").click(function(){
+            $("a#a1 i").toggleClass("icon4").toggleClass("icon5");
+        })
+        $("a#a5").click(function(){
+            $("a#a5 i").toggleClass("icon4").toggleClass("icon5");
+        })
+        $("a#a6").click(function(){
+            $("a#a6 i").toggleClass("icon4").toggleClass("icon5");
+        })
+        $("a#a7").click(function(){
+            $("a#a7 i").toggleClass("icon4").toggleClass("icon5");
+        })
+        $("a#a8").click(function(){
+            $("a#a8 i").toggleClass("icon4").toggleClass("icon5");
+        })
+        $('.t1 li').click(function () {
+            $(this).addClass('bac').siblings().removeClass('bac');
+        })
+        $('.t2 li').click(function () {
+            $(this).addClass('bac').siblings().removeClass('bac');
+        })
+        $('.t3 li').click(function () {
+            $(this).toggleClass('bac');
+        })
+        $('a.changdu,div#tc3').hover(function(){
+            $("div#tc3").toggle();             //若有该元素则隐藏若无则显示
+            $("a.changdu").toggleClass("bor");    //若有该class则删除若无则添加
+            $("a.mazhi,a.yanseji").toggleClass("dingwei1");
+        })
+        $('a.mazhi,div#tc4').hover(function(){
+            $("div#tc4").toggle();             
+            $("a.mazhi").toggleClass("bor"); 
+            $("a.changdu").toggleClass("dingwei1");
+        }) 
+        $('a.yanseji,div#tc2').hover(function(){
+            $("div#tc2").toggle();             
+            $("a.yanseji").toggleClass("bor"); 
+            $("a.changdu,a.mazhi,a.leixing").toggleClass("dingwei1");
+        })
+        $('a.leixing,div#tc1').hover(function(){
+            $("div#tc1").toggle();             
+            $("a.leixing").toggleClass("bor"); 
+            $("a.yanseji,a.changdu").toggleClass("dingwei1");
+        })
+        $('a.cangku,div#tc5').hover(function(){
+            $("div#tc5").toggle();             
+            $("a.cangku").toggleClass("bor"); 
+            $("a.jiagongdanwei").toggleClass("dingwei1");
+        })
+        $('a.jiagongdanwei,div#tc6').hover(function(){
+            $("div#tc6").toggle();             
+            $("a.jiagongdanwei").toggleClass("bor"); 
+            $("a.cangku").toggleClass("dingwei1");
+        })
+        $("a.pihao").click(function(){
+            $(".pihao span").toggleClass("arrow-up2").toggleClass("arrow-down2");
+        })
+        $("a.qiangli").click(function(){
+            $(".qiangli span").toggleClass("arrow-up").toggleClass("arrow-down");
+        })
+        $("a.huichao").click(function(){
+            $(".huichao span").toggleClass("arrow-up").toggleClass("arrow-down");
+        })
+        $("a.hanza").click(function(){
+            $(".hanza span").toggleClass("arrow-up").toggleClass("arrow-down");
+        })
+        $("a.jiage").click(function(){
+            $(".jiage span").toggleClass("arrow-up").toggleClass("arrow-down");
+        })
+    })
+    function wAlert(){
+            window.alert("您的采购需求信息已成功提交，交易专员会尽快与您联系。")
+        }
+
+    
+    //显示灰色 jQuery 遮罩
+     function showBg() {
+        var bh = $("body").height();
+        var bw = $("body").width();
+        $(".fullbg").css({
+        "height": bh,
+        "width": bw,
+        "display":"block"
+        });
+        $(".dialog").show();
+    }
+
+    function showBg2() {
+        var bh = $("body").height();
+        var bw = $("body").width();
+        $(".fullbg").css({
+        "height": bh,
+        "width": bw,
+        "display":"block"
+        });
+        $(".dialog2").show();
+    }   
+
+    //关闭灰色 jQuery 遮罩
+    function closeBg() {
+        $(".fullbg,.dialog,.dialog2").hide();
+    }
+    function showBg3(){
+        var bh = $("body").height();
+        var bw = $("body").width();
+        $(".fullbg").css({
+        "height": bh,
+        "width": bw,
+        "display":"block"
+        });
+        $(".dialog3").slideToggle("normal");
+    }
+    function closeBg2(){
+        $(".fullbg").hide();
+        $(".dialog3").slideToggle("normal");
+    }
+
+
+    
+</script>
+</head>
+<body>
+<div class="fullbg"></div>
+<div class="dialog">
+    <p class="close"><span>选择举报原因</span><a href="javascript:closeBg();">╳</a></p>
+    <div>
+        <input type="checkbox" value="该批棉花已售"> 该批棉花已售
+        <input type="checkbox" value="非最新货权人"> 非最新货权人
+        <input type="checkbox" value="仓库信息有误"> 仓库信息有误
+    </div>
+    <div>
+        <input type="checkbox" value=txt>
+        <input class="text" type="text" placeholder="其他原因" name="txt">
+    </div>
+    <div>
+        <input class="button1" type="submit" value="提    交">
+    </div>
+</div> 
+<div class="dialog2">
+    <p class="close"><a href="javascript:closeBg();">╳</a></p>
+    您的委托采购需求
+    <div><textarea class="weituotext" placeholder="请尽可能详细的填写您需要采购棉花的：仓库地区要求、棉花品级要求、拟采购数量、是否紧急采购等信息，方便交易专员更快捷为您服务。"></textarea></div>
+    联系方式
+    <div>
+        　　　　　<input placeholder="联系人" class="text2" type="text" name="cangku">　*
+    </div>
+    <div>
+       　　　　　<input placeholder="手机或电话" class="text2" type="text" name="pihao">　*
+    </div>
+    <div>
+       　　　　　<input placeholder="公司名称" class="text2" type="text" name="jiage">　*
+    </div>
+    <div>
+        　　　　　<input class="button2" onclick="wAlert()" type="submit" value="提    交">
+    </div>
+</div>     
+        <div class="dialog3">
+        <p class="dlpf">意见反馈<a href="javascript:closeBg2();">╳</a></p>
+        <div class="dline">
+            反馈内容
+        </div>
+        <div class="dline">
+            <textarea class="dtext" placeholder="欢迎提出您在使用过程中遇到的问题或宝贵建议（400字以内），感谢您的支持"></textarea>
+        </div>
+        <div>
+            <input type="button" value="截图">　　　点我，可以在当前页面截图哦
+        </div>
+        <div class="dline">
+            联系方式
+        </div>
+        <div class="dline">
+            <textarea class="dtext" placeholder="请留下您的联系方式，以便我们及时回复您"></textarea>
+        </div>
+        <div class="dline">
+            <input class="dbtn" type="button" value="提交反馈">
+        </div>
+    </div>
+    <div class="dialog4">
+        <div>
+            <a class="dbtn1" href="javascript:showBg3()">反馈<br>建议</a>
+        </div>
+        <div>
+            <a class="dbtn1" href="#">回到<br>顶部</a>
+        </div>
+    </div>
+<div class="top">
+    <div class="infobox">
+        <div class="topinfo">
+            <div class="phonebox">
+                <span class="topfont">棉天下，欢迎您
+                <a class="login" href="javascript:void(0);">登录</a>
+                <a class="register" href="javascript:void(0);">注册</a>  
+                <a class="user" href="javascript:void(0);">我的棉天下</a>    
+            </span>
+            </div>
+            <div class="userbox">
+                <span class="phone topfont">客服热线 400-960-8878&nbsp;&nbsp;服务时间：工作日08:00-20:00</span>
+            </div>
+        </div>
+    </div>
+    <div class="logo-searchbox">
+        <div class="sbox">
+            <div class="logobox">
+                <img src="../images/index/logo.png" alt="logo"/>
+            </div>
+            <div class="searchbox">
+                <img src="../images/index/search.png" alt="search" class="searchicon"/>
+                <input type="text" class="text" placeholder="输入11位批号查询详细指标或关键字"/>
+                <input type="button" class="button" value="搜全网"/>
+                <img class="shopingicon" src="../images/index/shoppingicon.png" alt="icon"/>
+            </div>
+        </div>
+    </div>
+    <div class="navbox">
+            <ul class="nav">
+                <li>
+                    <a class="nava" href="javascript:void(0);">棉花大卖场</a>
+
+                    <div class="pdbox">
+                        <a href="javascript:void(0);">新疆棉</a>
+                        <a href="javascript:void(0);">进口棉</a>
+                        <a href="javascript:void(0);">地产棉</a>
+                        <a href="javascript:void(0);">长绒棉</a>
+                    </div>
+
+                </li>
+                <li><a class="nava" href="javascript:void(0);">首页</a></li>
+                <li><a class="nava active" href="javascript:void(0);">棉花商城</a></li>
+                <li><a class="nava" href="javascript:void(0);">求购报价</a></li>
+                <li><a class="nava" href="javascript:void(0);">物流中心</a></li>
+            </ul>
+        </div>
+</div> 
+
+<div class="bodyer">
+    <div class="shopbox">
+        <div class="shopbox3">
+            <div style="height:40px;">
+                <a class="shopb" href="javascript:void(0)">收藏批号</a>
+                <a class="shopb2" href="javascript:void(0)">下单批号</a>
+            </div>
+                <div class="shopb4">
+                <div class="shopb3"><a class="number" href="javascript:void(0)">65591141029</a>&nbsp;&nbsp;<a href="javascript:void(0)"><i class="icon7"></i></a>
+                    </div>
+                <div class="shopb3"><a class="number" href="javascript:void(0)">65591141029</a>&nbsp;&nbsp;<a href="javascript:void(0)"><i class="icon7"></i></a>
+                    </div>
+                <div class="shopb3"><a class="number" href="javascript:void(0)">65591141029</a>&nbsp;&nbsp;<a href="javascript:void(0)"><i class="icon7"></i></a>
+                    </div>
+                <div class="shopb3"><a class="number" href="javascript:void(0)">65591141029</a>&nbsp;&nbsp;<a href="javascript:void(0)"><i class="icon7"></i></a>
+                </div>
+                <div class="shopb3"><a class="number" href="javascript:void(0)">65591141029</a>&nbsp;&nbsp;<a href="javascript:void(0)"><i class="icon7"></i></a>
+                </div>
+                <div class="shopb3"><a class="number" href="javascript:void(0)">65591141029</a>&nbsp;&nbsp;<a href="javascript:void(0)"><i class="icon7"></i></a>
+                </div>
+                </div>
+            <a class="shopbtn" href="javascript:void(0)">对&nbsp;&nbsp;比</a>
+            <a class="shopbtn1" href="javascript:void(0)">清&nbsp;&nbsp;空</a>
+        </div>     
+    </div>
+    <div class="nav">
+    <ul style="float:left">
+        <li class="licur"><a class="nava2" href="javascript:void(0);">新疆棉</a></li>
+        <li><a class="nava2" href="javascript:void(0);">进口棉</a></li>
+        <li><a class="nava2" href="javascript:void(0);">地产棉</a></li>
+        <li><a class="nava2" href="javascript:void(0);">长绒棉</a></li>       
+    </ul>
+    </div>    
+    
+    <div class="sbox">
+        <div class="path">
+        <a href="#">首页</a>&nbsp;>>
+        <a href="#">棉花商城</a>
+        </div>
+        <div class="top1">
+            <p><span>条件筛选：</span><a href="#">高级搜索</a></p>
+            <div class="tiaojian">
+                <span class="st">按仓库找：</span>
+                <a href="javascript:void(0)">全部</a>
+                <select name="" class="cd">
+                    <option value="">1</option>
+                    <option value="">2</option>
+                    <option value="">3</option>
+                    <option value="">4</option>
+                    <option value="">5</option>
+                    <option value="">6</option>
+                </select>
+                <select name="" class="cd">
+                    <option value="">1</option>
+                    <option value="">2</option>
+                    <option value="">3</option>
+                    <option value="">4</option>
+                    <option value="">5</option>
+                    <option value="">6</option>
+                </select>
+                <select name="" class="cd2">
+                    <option value="">1</option>
+                    <option value="">2</option>
+                    <option value="">3</option>
+                    <option value="">4</option>
+                    <option value="">5</option>
+                    <option value="">6</option>
+                </select>
+            </div>
+            <div class="tiaojian tj2">
+                <span class="st">价格区间：</span>
+                <a href="javascript:void(0)">全部</a>
+                <input type="text" class="txt"/>
+                <span class="and">--</span>
+                <input type="text" class="txt"/>
+                <a class="surebtn" href="javascript:void(0);">确定</a>
+            </div>
+                <a href="javascript:showBg2()" class="wtzh">委托人工找货</a>
+        </div>
+    </div>
+    <div class="bottom sbox">
+            <table cellspacing="0">
+                <tr>
+                    <td><a class="pihao" href="javascript:void(0);">批&nbsp;&nbsp;号<span class="arrow arrow-up2"></span></a></td>
+                    <td>
+                        <div class="dingwei">
+                            <a class="leixing dingwei1" href="javascript:void(0);">类型<div class="boder_arrow"></div></a>
+                            <div id="tc1" class="dttanchu2">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="dingwei">
+                            <a class="yanseji dingwei1" href="javascript:void(0);">颜色级<div class="boder_arrow"></div></a>
+                            <div id="tc2" class="ystanchu">
+                            <div class="tanchu1">请选择颜色级比例</div>
+                            <div class="t1 tanchu3">
+                                <ul>
+                                    <li class="nocolor">白棉</li>
+                                    <li>白棉1级</li>
+                                    <li>白棉2级</li>
+                                    <li>白棉3级</li>
+                                    <li>白棉4级</li>
+                                    <li>白棉5级</li>
+                                    <li class="nocolor">淡点污棉</li>
+                                    <li>淡点污棉1级</li>
+                                    <li>淡点污棉2级</li>
+                                    <li class="nocolor">淡黄染棉</li>
+                                    <li>淡黄染棉1级</li>
+                                    <li>淡黄染棉2级</li>
+                                    <li>淡黄染棉3级</li>
+                                    <li class="nocolor">黄染棉</li>
+                                    <li>黄染棉1级</li>
+                                    <li>黄染棉2级</li>
+                                    
+                                </ul>
+                            </div>
+                            <div class="t2 tanchu2">
+                                <ul>
+                                    <li class="nocolor">颜色级比例</li>
+                                    <li>大于90%</li>
+                                    <li>大于80%</li>
+                                    <li>大于70%</li>
+                                    <li>大于60%</li>
+                                    <li>大于50%</li>
+                                    <li>大于40%</li>
+                                    <li>大于30%</li>
+                                    <li>大于20%</li>
+                                    <li>大于10%</li>
+                                </ul>
+                            </div>
+                        </div>
+                        </div>    
+                    </td>
+                        
+                    <td><div class="dingwei">
+                        <a class="changdu dingwei1" href="javascript:void(0);">长度 <div class="boder_arrow"></div></a>
+                       
+                        <div id="tc3" class="tanchu">
+                            <div class="tanchu1">请选择长度级比例</div>
+                            <div class="t1 tanchu3">
+                                <ul>
+                                    <li class="nocolor">细绒棉</li>
+                                    <li>32</li>
+                                    <li>31</li>
+                                    <li>30</li>
+                                    <li>29</li>
+                                    <li>28</li>
+                                    <li>27</li>
+                                    <li>26</li>
+                                    <li>25</li>
+                                </ul>
+                            </div>
+                            <div class="t2 tanchu2">
+                                <ul>
+                                    <li class="nocolor">长度级比例</li>
+                                    <li>大于90%</li>
+                                    <li>大于80%</li>
+                                    <li>大于70%</li>
+                                    <li>大于60%</li>
+                                    <li>大于50%</li>
+                                    <li>大于40%</li>
+                                    <li>大于30%</li>
+                                    <li>大于20%</li>
+                                    <li>大于10%</li>
+                                </ul>
+                            </div>
+                        </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="dingwei">
+                            <a class="mazhi dingwei1" href="javascript:void(0);">马值<div class="boder_arrow"></div></a>
+                            <div id="tc4" class="tanchu">
+                            <div class="tanchu1">请选择马克隆值级比例</div>
+                            <div class="t1 tanchu3">
+                                <ul>
+                                    <li class="nocolor">档　　次</li>
+                                    <li>C2</li>
+                                    <li>B2</li>
+                                    <li>A</li>
+                                    <li>B1</li>
+                                    <li>C1</li>
+                                </ul>
+                            </div>
+                            <div class="t2 tanchu2">
+                                <ul>
+                                    <li class="nocolor">比　　例</li>
+                                    <li>大于90%</li>
+                                    <li>大于80%</li>
+                                    <li>大于70%</li>
+                                    <li>大于60%</li>
+                                    <li>大于50%</li>
+                                    <li>大于40%</li>
+                                    <li>大于30%</li>
+                                    <li>大于20%</li>
+                                    <li>大于10%</li>
+                                </ul>
+                            </div>
+                        </div>
+                        </div>
+                    </td>
+                    <td><a class="qiangli" href="javascript:void(0);">强力<span class="arrow arrow-up"></span></a></td>
+                    <td><a class="huichao" href="javascript:void(0);">回潮<span class="arrow arrow-up"></a></td>
+                    <td><a class="hanza" href="javascript:void(0);">含杂<span class="arrow arrow-up"></a></td>
+                    <td>
+                        <div class="dingwei">
+                            <a class="cangku dingwei1" href="javascript:void(0);">　仓　库　<div class="boder_arrow"></div></a>
+                            <div id="tc5" class="dttanchu">
+                                
+                        </div>
+                    </td>
+                    <td><div class="dingwei">
+                            <a class="jiagongdanwei dingwei1" href="javascript:void(0);">加工单位<div class="boder_arrow"></div></a>
+                            <div id="tc6" class="dttanchu">     
+                        </div>
+                    </td>
+                    <td><a class="jiage" href="javascript:void(0);">价格<span class="arrow arrow-up"></a></td>
+                    <td style="width:140px"><a class="tablebtn" href="javascript:void(0)">确认筛选</a><a class="tablebtn" href="javascript:void(0)">重置筛选</a></td>   
+                </tr>
+                <tr>
+                    <td><a class="number" href="javascript:void(0);">65591141029</a></td>
+                    <td>机采</td>
+                    <td>白棉3级</td>
+                    <td>28</td>
+                    <td>A</td>
+                    <td>27</td>
+                    <td>6.5</td>
+                    <td>1.6</td>
+                    <td>禹城库</td>
+                    <td>马苏市</td>
+                    <td class="cur2">13600</td>
+                    <td><a id="a1" href="javascript:void(0);"><i class="icon4"></i><br><br><span>收藏</span></a>　
+                        <a href="javascript:showBg();"><i class="icon6"></i><br><br><span>举报</span></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a class="number" href="javascript:void(0);">65591141029</a></td>
+                    <td>机采</td>
+                    <td>白棉3级</td>
+                    <td>28</td>
+                    <td>A</td>
+                    <td>27</td>
+                    <td>6.5</td>
+                    <td>1.6</td>
+                    <td>禹城库</td>
+                    <td>马苏市</td>
+                    <td class="cur2">13600</td>
+                    <td><a id="a2" href="javascript:void(0);"><i class="icon4"></i><br><br><span>收藏</span></a>　
+                        <a href="javascript:showBg();"><i class="icon6"></i><br><br><span>举报</span></a>
+                    </td>        
+                </tr>
+                <tr>
+                    <td><a class="number" href="javascript:void(0);">65591141029</a></td>
+                    <td>机采</td>
+                    <td>白棉3级</td>
+                    <td>28</td>
+                    <td>A</td>
+                    <td>27</td>
+                    <td>6.5</td>
+                    <td>1.6</td>
+                    <td>禹城库</td>
+                    <td>马苏市</td>
+                    <td class="cur2">13600</td>
+                    <td>
+                        <a id="a3" href="javascript:void(0);"><i class="icon4"></i><br><br><span>收藏</span></a>　
+                        <a href="javascript:showBg();"><i class="icon6"></i><br><br><span>举报</span></a>
+                    </td>       
+                </tr>
+                <tr>
+                    <td><a class="number" href="javascript:void(0);">65591141029</a></td>
+                    <td>机采</td>
+                    <td>白棉3级</td>
+                    <td>28</td>
+                    <td>A</td>
+                    <td>27</td>
+                    <td>6.5</td>
+                    <td>1.6</td>
+                    <td>禹城库</td>
+                    <td>马苏市</td>
+                    <td class="cur2">13600</td>
+                    <td><a id="a4" href="javascript:void(0);"><i class="icon4"></i><br><br><span>收藏</span></a>　
+                        <a href="javascript:showBg();"><i class="icon6"></i><br><br><span>举报</span></a>
+                    </td>        
+                </tr>
+                <tr>
+                    <td><a class="number" href="javascript:void(0);">65591141029</a></td>
+                    <td>机采</td>
+                    <td>白棉3级</td>
+                    <td>28</td>
+                    <td>A</td>
+                    <td>27</td>
+                    <td>6.5</td>
+                    <td>1.6</td>
+                    <td>江苏省禹城库</td>
+                    <td>马苏市</td>
+                    <td class="cur2">13600</td>
+                    <td><a id="a5" href="javascript:void(0);"><i class="icon4"></i><br><br><span>收藏</span></a>　
+                        <a href="javascript:showBg();"><i class="icon6"></i><br><br><span>举报</span></a>
+                    </td>        
+                </tr>
+                <tr>
+                    <td><a class="number" href="javascript:void(0);">65591141029</a></td>
+                    <td>机采</td>
+                    <td>白棉3级</td>
+                    <td>28</td>
+                    <td>A</td>
+                    <td>27</td>
+                    <td>6.5</td>
+                    <td>1.6</td>
+                    <td>禹城库</td>
+                    <td>马苏市</td>
+                    <td class="cur2">13600</td>
+                    <td><a id="a6" href="javascript:void(0);"><i class="icon4"></i><br><br><span>收藏</span></a>　
+                        <a href="javascript:showBg();"><i class="icon6"></i><br><br><span>举报</span></a>
+                    </td>        
+                </tr>
+                <tr>
+                    <td><a class="number" href="javascript:void(0);">65591141029</a></td>
+                    <td>机采</td>
+                    <td>白棉3级</td>
+                    <td>28</td>
+                    <td>A</td>
+                    <td>27</td>
+                    <td>6.5</td>
+                    <td>1.6</td>
+                    <td>禹城库</td>
+                    <td>马苏市</td>
+                    <td class="cur2">13600</td>
+                    <td><a id="a7" href="javascript:void(0);"><i class="icon4"></i><br><br><span>收藏</span></a>　
+                        <a href="javascript:showBg();"><i class="icon6"></i><br><br><span>举报</span></a>
+                    </td>        
+                </tr>
+                <tr>
+                    <td><a class="number" href="javascript:void(0);">65591141029</a></td>
+                    <td>机采</td>
+                    <td>白棉3级</td>
+                    <td>28</td>
+                    <td>A</td>
+                    <td>27</td>
+                    <td>6.5</td>
+                    <td>1.6</td>
+                    <td>禹城库</td>
+                    <td>马苏市</td>
+                    <td class="cur2">13600</td>
+                    <td><a id="a8" href="javascript:void(0);"><i class="icon4"></i><br><br><span>收藏</span></a>　
+                        <a href="javascript:showBg();"><i class="icon6"></i><br><br><span>举报</span></a>
+                    </td>        
+                </tr>
+                <tr>
+                        <td class="pageindex" colspan="12">
+                            <a href="javascript:void(0);">上一页</a>
+                            <a class="cur" href="javascript:void(0);">1</a>
+                            <a href="javascript:void(0);">2</a>
+                            <a href="javascript:void(0);">3</a>
+                            <a href="javascript:void(0);">4</a>
+                            <a href="javascript:void(0);">5</a>
+                            <a href="javascript:void(0);">下一页</a>
+                            每页显示
+                            <select>
+                                <option>20</option>
+                                <option>40</option>
+                                <option>60</option>
+                            </select>
+                            条记录
+                        </td>
+                    </tr>
+                
+                
+            </table>
+        </div>
+</div>
+
+<div class="footer">
+    <div class="footbox">
+        <div class="imgbox2">
+            <img style="width:140px;height:120px;" src="../images/index/logo2.png">
+        </div>
+        <ul>
+            <li>
+                <div class="titlebox">
+                    <i class="icon icon1"></i>
+                    <span class="title">我要买棉花</span>
+                </div>
+                <a class="alink" href="javascript:void(0);">我是买家，如何找货？</a>
+                <a class="alink" href="javascript:void(0);">商城采购流程</a>
+                <a class="alink" href="javascript:void(0);">通过微信找货</a>
+                <a class="alink" href="javascript:void(0);">在线找车</a>
+            </li>
+            <li>
+                <div class="titlebox">
+                    <i class="icon icon2"></i>
+                    <span class="title">我要卖棉花</span>
+                </div>
+                <a class="alink" href="javascript:void(0);">我是卖家，如何销售？</a>
+                <a class="alink" href="javascript:void(0);">资源上传流程</a>
+                <a class="alink" href="javascript:void(0);">卖家如何直接报价？</a>
+                <a class="alink" href="javascript:void(0);">如何吸引更多买家？</a>
+            </li>
+            <li>
+                <div class="titlebox">
+                    <i class="icon icon3"></i>
+                    <span class="title">网站导航</span>
+                </div>
+                <a class="alink" href="javascript:void(0);">注册账号/登录网站</a>
+                <a class="alink" href="javascript:void(0);">无法登录/忘记密码</a>
+                <a class="alink" href="javascript:void(0);">会员中心</a>
+                <a class="alink" href="javascript:void(0);">修改账户设置</a>
+            </li>
+        </ul>
+        <div class="imgbox">
+            <img src="../images/index/img4.jpg" alt="kefu"/>
+        </div>
+    </div>
+    <div class="linfobox">
+        <div class="linfo">
+            <a href="javascript:void(0);">关于我们</a>
+            <a href="javascript:void(0);">法律声明</a>
+            <a href="javascript:void(0);">诚聘英才</a>
+            <a href="javascript:void(0);">联系我们</a>
+            <a href="javascript:void(0);">友情链接</a>
+        </div>
+        <p class="linfo2">
+            Copyright&nbsp;&nbsp;©&nbsp;&nbsp;2013-2015&nbsp;&nbsp;棉天下版权所有&nbsp;&nbsp;川ICP证100205号&nbsp;&nbsp;川ICP备09043401号
+        </p>
+    </div>
+</div>
+
+
+
+</body>
+</html>

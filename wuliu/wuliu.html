@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+    <link rel="icon" href="../images/index/micon.png"/>
+    <link href="../css/jquery-ui.css" rel="stylesheet">
+<link href="../css/wuliu.css" rel="stylesheet">
+<script src="../javascript/jquery-1.8.3.js"></script>
+<script src="../javascript/jquery.ui.datepicker-zh-CN.js"></script>
+<script src="../javascript/jquery-ui.js"></script>
+<script type="text/javascript">
+    function wAlert(){
+        window.alert("您的物流需求信息已成功提交，物流专员会尽快与您联系。");
+
+    }
+    $(document).ready(function(){
+        $("#selectDate").datepicker();
+    })
+    
+    $(window).scroll(function(){
+            if($(document).scrollTop()>50){
+                $("div.infobox,div.navbox").addClass("nodisplay");
+            }else{
+                $("div.infobox,div.navbox").removeClass("nodisplay");
+            }
+        })
+  
+    function showBg() {
+      var bh = $("body").height();
+      var bw = $("body").width();
+      $(".fullbg").css({
+      "height": bh,
+      "width": bw,
+      "display":"block"
+      });
+      $(".dialog").show();
+      }
+      
+    function showBg3(){
+        var bh = $("body").height();
+        var bw = $("body").width();
+        $(".fullbg").css({
+        "height": bh,
+        "width": bw,
+        "display":"block"
+        });
+        $(".dialog3").slideToggle("normal");
+    }
+    function closeBg2(){
+        $(".fullbg").hide();
+        $(".dialog3").slideToggle("normal");
+    }
+
+//关闭灰色 jQuery 遮罩
+function closeBg() {
+$(".fullbg,.dialog").hide();
+}
+
+
+</script>
+    
+<title>棉天下</title>
+</head>
+<body>
+<div class="fullbg"></div>
+<div class="dialog">
+    <p class="close"><a href="javascript:closeBg();">╳</a></p>
+    承运商信息登记
+    <div>
+        公司名称　<input class="text" type="text" name="cangku">　*
+    </div>
+    <div>
+        联&nbsp;&nbsp;系&nbsp;人　<input class="text" type="text" name="pihao">　*
+    </div>
+    <div>
+        联系电话　<input class="text" type="text" name="jiage">　*
+    </div>
+    <div>
+        手　　机　<input class="text" type="text" name="jiage">　*
+    </div>
+    <div>
+        QQ　&nbsp;号　<input class="text" type="text" name="jiage">
+    </div>
+    <div>
+        微　　信　<input class="text" type="text" name="jiage">
+    </div>
+    <div>
+        优势路线　<input class="text" type="text" name="jiage">　*
+    </div>
+    <div>
+        　　　　　<input class="button1" type="submit" value="提    交">
+    </div>
+</div>     
+        <div class="dialog3">
+        <p class="dlpf">意见反馈<a href="javascript:closeBg2();">╳</a></p>
+        <div class="dline">
+            反馈内容
+        </div>
+        <div class="dline">
+            <textarea class="dtext" placeholder="欢迎提出您在使用过程中遇到的问题或宝贵建议（400字以内），感谢您的支持"></textarea>
+        </div>
+        <div>
+            <input type="button" value="截图">　　　点我，可以在当前页面截图哦
+        </div>
+        <div class="dline">
+            联系方式
+        </div>
+        <div class="dline">
+            <textarea class="dtext" placeholder="请留下您的联系方式，以便我们及时回复您"></textarea>
+        </div>
+        <div class="dline">
+            <input class="dbtn" type="button" value="提交反馈">
+        </div>
+    </div>
+    <div class="dialog4">
+        <div>
+            <a class="dbtn1" href="javascript:showBg3()">反馈<br>建议</a>
+        </div>
+        <div>
+            <a class="dbtn1" href="#">回到<br>顶部</a>
+        </div>
+    </div>
+<div class="top">
+    <div class="infobox">
+        <div class="topinfo">
+            <div class="phonebox">
+                <span class="topfont">棉天下，欢迎您
+                <a class="login" href="javascript:void(0);">登录</a>
+                <a class="register" href="javascript:void(0);">注册</a>  
+                <a class="user" href="javascript:void(0);">我的棉天下</a>    
+            </span>
+            </div>
+            <div class="userbox">
+                <span class="phone topfont">服务时间：工作日08:00-20:00</span>
+            </div>
+        </div>
+    </div>
+    <div class="logo-searchbox">
+        <div class="sbox">
+            <div class="logobox">
+                <img src="../images/index/logo.png" alt="logo"/>
+            </div>
+            <div class="searchbox">
+                <img src="../images/index/search.png" alt="search" class="searchicon"/>
+                <input type="text" class="text" placeholder="输入11位批号查询详细指标或关键字"/>
+                <input type="button" class="button" value="搜全网"/>
+                <img class="shopingicon" src="../images/index/shoppingicon.png" alt="icon"/>
+            </div>
+        </div>
+    </div>
+    <div class="navbox">
+            <ul class="nav">
+                <li>
+                    <a class="nava" href="javascript:void(0);">棉花大卖场</a>
+
+                    <div class="pdbox">
+                        <a href="javascript:void(0);">新疆棉</a>
+                        <a href="javascript:void(0);">进口棉</a>
+                        <a href="javascript:void(0);">地产棉</a>
+                        <a href="javascript:void(0);">长绒棉</a>
+                    </div>
+
+                </li>
+                <li><a class="nava" href="javascript:void(0);">首页</a></li>
+                <li><a class="nava" href="javascript:void(0);">棉花商城</a></li>
+                <li><a class="nava" href="javascript:void(0);">求购报价</a></li>
+                <li><a class="nava active" href="javascript:void(0);">物流中心</a></li>
+            </ul>
+        </div>
+</div> 
+
+<div class="bodyer">
+    <div class="path">
+        <a href="#">首页</a>&nbsp;>>
+        <a href="#">物流</a>
+    </div>
+    <div class="wbox">
+        <div class="pbox">
+            <div class="lpart">
+                <div class="line1">
+                    <img src="../images/wuliu/wicon1.png" alt=""/>
+
+                    <div class="txtinfo">
+                        <p class="title">填写物流需求</p>
+
+                        <p class="js">请填写以下物流信息，我们会尽快帮您找到合适的物流信息</p>
+                    </div>
+                </div>
+                <div class="line1">
+                    <div class="lbox">
+                        <span class="lkey">批&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;数</span>
+                        <input class="lval" type="text"/>
+                    </div>
+                    <div class="lbox">
+                        <span class="lkey">件&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;数</span>
+                        <input class="lval" type="text"/>
+                    </div>
+                    <div class="lbox">
+                        <span class="lkey">重&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;量</span>
+                        <input class="lval" type="text"/>
+                    </div>
+                </div>
+                <div class="line1">
+                    <div class="lbox">
+                        <span class="lkey">装车时间</span>
+                        <input id="selectDate" class="date" readonly="readonly" placeholder="请选择时间" type="text"/>
+                    </div>
+                </div>
+                <div class="line1">
+                    <div class="lbox">
+                        <span class="lkey">起&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;点</span>
+                        <select class="lval" name="" id="">
+                            <option value="">四川</option>
+                            <option value="">陕西</option>
+                            <option value="">山东</option>
+                            <option value="">云南</option>
+                            <option value="">广东</option>
+                        </select>
+                        <span>省</span>
+                        <select class="lval" name="" id="">
+                            <option value="">成都</option>
+                            <option value="">绵阳</option>
+                            <option value="">康定</option>
+                            <option value="">广元</option>
+                            <option value="">巴中</option>
+                        </select>
+                        <span>市</span>
+                        <input class="lval2" placeholder="仓库名称" type="text"/>
+                    </div>
+                </div>
+                <div class="line1">
+                    <div class="lbox">
+                        <span class="lkey">终&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;点</span>
+                        <select class="lval" name="" id="">
+                            <option value="">四川</option>
+                            <option value="">陕西</option>
+                            <option value="">山东</option>
+                            <option value="">云南</option>
+                            <option value="">广东</option>
+                        </select>
+                        <span>省</span>
+                        <select class="lval" name="" id="">
+                            <option value="">成都</option>
+                            <option value="">绵阳</option>
+                            <option value="">康定</option>
+                            <option value="">广元</option>
+                            <option value="">巴中</option>
+                        </select>
+                        <span>市</span>
+                        <input class="lval2" type="text"/>
+                    </div>
+                </div>
+                <div class="line1">
+                    <div class="lbox">
+                        <span class="lkey">联&nbsp;&nbsp;系&nbsp;&nbsp;人</span>
+                        <input class="lval3" type="text"/>
+                    </div>
+                </div>
+                <div class="line1">
+                    <div class="lbox">
+                        <span class="lkey">联系电话</span>
+                        <input class="lval3" type="text"/>
+                    </div>
+                </div>
+                <div class="line1">
+                    <div class="lbox">
+                        <span class="lkey">公司名称</span>
+                        <input class="lval3" type="text"/>
+                    </div>
+                </div>
+                <div class="line1">
+                    <input onclick="wAlert()" type="button" value="提交" class="btn"/>
+                </div>
+            </div>
+            <div class="rpart">
+                <div class="screenbox">
+                    <div class="screenimgbox">
+                        <div class="carouselBox">
+                            <div class="pic-show">
+                                <div class="pic">
+                                    <img src="../images/index/nemo.jpg">
+                                </div>
+                                <div class="pic">
+                                    <img src="images/index/toystory.jpg">
+                                </div>
+                                <div class="pic">
+                                    <img src="images/index/up.jpg">
+                                </div>
+                                <div class="pic">
+                                    <img src="images/index/walle.jpg">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btnbox">
+                            <a id="a1" class="abtn cur" href="javascript:void(0);"></a>
+                            <a id="a2" class="abtn" href="javascript:void(0);"></a>
+                            <a id="a3" class="abtn" href="javascript:void(0);"></a>
+                            <a id="a4" class="abtn" href="javascript:void(0);"></a>
+                        </div>
+                    </div>
+               </div>
+                <div class="ad">
+                    <div class="ad2">服务免费</div>
+                    <div class="ad3">免费帮您找最优质的承运商</div>
+                </div>
+                <div class="ad">
+                    <div class="ad2">报价快速</div>
+                    <div class="ad3">大量合作运输公司,物流专员为您快速报价</div>
+                </div>
+                <div class="ad">
+                    <div class="ad2">资源优质</div>
+                    <div class="ad3">强大后台支持，专线多，综合比价，最佳性价比选择<div><a class="number" href="javascript:showBg();"><br><br><br><br><br>承运商登记</a></div></div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="footbox">
+        <div class="imgbox2">
+            <img style="width:140px;height:120px;" src="../images/index/logo2.png">
+        </div>
+        <ul>
+            <li>
+                <div class="titlebox">
+                    <i class="icon icon1"></i>
+                    <span class="title">我要买棉花</span>
+                </div>
+                <a class="alink" href="javascript:void(0);">我是买家，如何找货？</a>
+                <a class="alink" href="javascript:void(0);">商城采购流程</a>
+                <a class="alink" href="javascript:void(0);">通过微信找货</a>
+                <a class="alink" href="javascript:void(0);">在线找车</a>
+            </li>
+            <li>
+                <div class="titlebox">
+                    <i class="icon icon2"></i>
+                    <span class="title">我要卖棉花</span>
+                </div>
+                <a class="alink" href="javascript:void(0);">我是卖家，如何销售？</a>
+                <a class="alink" href="javascript:void(0);">资源上传流程</a>
+                <a class="alink" href="javascript:void(0);">卖家如何直接报价？</a>
+                <a class="alink" href="javascript:void(0);">如何吸引更多买家？</a>
+            </li>
+            <li>
+                <div class="titlebox">
+                    <i class="icon icon3"></i>
+                    <span class="title">网站导航</span>
+                </div>
+                <a class="alink" href="javascript:void(0);">注册账号/登录网站</a>
+                <a class="alink" href="javascript:void(0);">无法登录/忘记密码</a>
+                <a class="alink" href="javascript:void(0);">会员中心</a>
+                <a class="alink" href="javascript:void(0);">修改账户设置</a>
+            </li>
+        </ul>
+        <div class="imgbox">
+            <img src="../images/index/img4.jpg" alt="kefu"/>
+        </div>
+    </div>
+    <div class="linfobox">
+        <div class="linfo">
+            <a href="javascript:void(0);">关于我们</a>
+            <a href="javascript:void(0);">法律声明</a>
+            <a href="javascript:void(0);">诚聘英才</a>
+            <a href="javascript:void(0);">联系我们</a>
+            <a href="javascript:void(0);">友情链接</a>
+        </div>
+        <p class="linfo2">
+            Copyright&nbsp;&nbsp;©&nbsp;&nbsp;2013-2015&nbsp;&nbsp;棉天下版权所有&nbsp;&nbsp;川ICP证100205号&nbsp;&nbsp;川ICP备09043401号
+        </p>
+    </div>
+</div>
+
+
+</body>
+</html>

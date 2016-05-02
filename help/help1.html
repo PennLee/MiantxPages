@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+    <link rel="icon" href="../images/index/micon.png"/>
+<link href="../css/help.css" rel="stylesheet">
+<script src="../javascript/jquery-1.8.3.js"></script>
+
+<script type="text/javascript">
+    $(function(){
+        $(window).scroll(function(){
+            if($(document).scrollTop()>50){
+                $("div.infobox,div.navbox").addClass("nodisplay");
+            }else{
+                $("div.infobox,div.navbox").removeClass("nodisplay");
+            }
+        })
+        $("#div_0 div.c1").click(function(){
+            $("div#div_0").toggleClass("active");
+            $("#div_0 div.accord-text ").toggle();
+        })
+        $("#div_1 div.c1").click(function(){
+            $("div#div_1").toggleClass("active");
+            $("#div_1 div.accord-text ").toggle();
+        })
+        $("#div_2 div.c1").click(function(){
+            $("div#div_2").toggleClass("active");
+            $("#div_2 div.accord-text ").toggle();
+        })
+        $("#div_3 div.c1").click(function(){
+            $("div#div_3").toggleClass("active");
+            $("#div_3 div.accord-text ").toggle();
+        })
+        $("#div_4 div.c1").click(function(){
+            $("div#div_4").toggleClass("active");
+            $("#div_4 div.accord-text ").toggle();
+        })
+        $("#div_5 div.c1").click(function(){
+            $("div#div_5").toggleClass("active");
+            $("#div_5 div.accord-text ").toggle();
+        })
+    })
+    
+    function showBg3(){
+        var bh = $("body").height();
+        var bw = $("body").width();
+        $(".fullbg").css({
+        "height": bh,
+        "width": bw,
+        "display":"block"
+        });
+        $(".dialog3").slideToggle("normal");
+    }
+    function closeBg2(){
+        $(".fullbg").hide();
+        $(".dialog3").slideToggle("normal");
+    }
+    
+</script>
+    
+<title>棉天下</title>
+</head>
+<body>
+    <div class="fullbg"></div>
+    <div class="dialog3">
+        <p class="dlpf">意见反馈<a href="javascript:closeBg2();">╳</a></p>
+        <div class="dline">
+            反馈内容
+        </div>
+        <div class="dline">
+            <textarea class="dtext" placeholder="欢迎提出您在使用过程中遇到的问题或宝贵建议（400字以内），感谢您的支持"></textarea>
+        </div>
+        <div>
+            <input type="button" value="截图">　　　点我，可以在当前页面截图哦
+        </div>
+        <div class="dline">
+            联系方式
+        </div>
+        <div class="dline">
+            <textarea class="dtext" placeholder="请留下您的联系方式，以便我们及时回复您"></textarea>
+        </div>
+        <div class="dline">
+            <input class="dbtn" type="button" value="提交反馈">
+        </div>
+    </div>
+    <div class="dialog4">
+        <div>
+            <a class="dbtn1" href="javascript:showBg3()">反馈<br>建议</a>
+        </div>
+        <div>
+            <a class="dbtn1" href="#">回到<br>顶部</a>
+        </div>
+    </div>
+    <div class="top">
+        <div class="infobox">
+            <div class="topinfo">
+                <div class="phonebox">
+                    <span class="topfont">棉天下，欢迎您
+                    <a class="login" href="javascript:void(0);">登录</a>
+                    <a class="register" href="javascript:void(0);">注册</a>  
+                    <a class="user" href="javascript:void(0);">我的棉天下</a>    
+                </span>
+                </div>
+                <div class="userbox">
+                    <span class="phone topfont">服务时间：工作日08:00-20:00</span>
+                </div>
+            </div>
+        </div>
+        <div class="logo-searchbox">
+            <div class="sbox">
+                <div class="logobox">
+                    <img src="../images/index/logo.png" alt="logo"/>
+                </div>
+                <div class="searchbox">
+                    <img src="../images/index/search.png" alt="search" class="searchicon"/>
+                    <input type="text" class="text" placeholder="输入11位批号查询详细指标或关键字"/>
+                    <input type="button" class="button" value="搜全网"/>
+                    <img class="shopingicon" src="../images/index/shoppingicon.png" alt="icon"/>
+                </div>
+            </div>
+        </div>
+        <div class="navbox">
+                <ul class="nav">
+                    <li>
+                        <a class="nava" href="javascript:void(0);">棉花大卖场</a>
+
+                        <div class="pdbox">
+                            <a href="javascript:void(0);">新疆棉</a>
+                            <a href="javascript:void(0);">进口棉</a>
+                            <a href="javascript:void(0);">地产棉</a>
+                            <a href="javascript:void(0);">长绒棉</a>
+                        </div>
+
+                    </li>
+                    <li><a class="nava" href="javascript:void(0);">首页</a></li>
+                    <li><a class="nava" href="javascript:void(0);">棉花商城</a></li>
+                    <li><a class="nava" href="javascript:void(0);">求购报价</a></li>
+                    <li><a class="nava" href="javascript:void(0);">物流中心</a></li>
+                </ul>
+            </div>
+    </div> 
+
+<div class="bodyer">
+    <div class="path">
+        <a href="#">首页</a>&nbsp;>>
+        <a href="#">帮助中心</a>
+    </div>
+    <div class="wbox">
+        <div class="pbox">
+            <div class="hd">
+                <h2>帮助中心</h2>
+            </div>
+            <div class="bd">
+                <div style="height:26px;">
+                    <h3>我要卖棉花</h3>
+                </div>
+                <div class="mod-help">
+                    <div class="accord" id="div_0">
+                        <div class="accord-tl c1">
+                            <i></i>
+                            <span>我是卖家，如何销售</span>
+                        </div>
+                        <div class="accord-text">
+                            我是买家，如何找货我是买家，如何找货我是买家，如何找货我是买家，如何找货我是买家，如何找货我是买家，如何找货我是买家，如何找货我是买家，如何找货
+                        </div>
+                    </div>
+                    <div class="accord" id="div_1">
+                        <div class="accord-tl c1">
+                            <i></i>
+                            <span>资源上传流程</span>
+                        </div>
+                        <div class="accord-text">
+                            我是买家，如何找货我是买家，如何找货我是买家，如何找货我是买家，如何找货我是买家，如何找货我是买家，如何找货我是买家，如何找货我是买家，如何找货
+                        </div>
+                    </div>
+                    <div class="accord" id="div_2">
+                        <div class="accord-tl c1">
+                            <i></i>
+                            <span>卖家如何直接报价？</span>
+                        </div>
+                        <div class="accord-text">
+                            我是买家，如何找货我是买家，如何找货我是买家，如何找货我是买家，如何找货我是买家，如何找货我是买家，如何找货我是买家，如何找货我是买家，如何找货
+                        </div>
+                    </div>
+                    <div class="accord" id="div_3">
+                        <div class="accord-tl c1">
+                            <i></i>
+                            <span>如何吸引更多买家？</span>
+                        </div>
+                        <div class="accord-text">
+                            我是买家，如何找货我是买家，如何找货我是买家，如何找货我是买家，如何找货我是买家，如何找货我是买家，如何找货我是买家，如何找货我是买家，如何找货
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="footbox">
+        <div class="imgbox2">
+            <img style="width:140px;height:120px;" src="../images/index/logo2.png">
+        </div>
+        <ul>
+            <li>
+                <div class="titlebox">
+                    <i class="icon icon1"></i>
+                    <span class="title">我要买棉花</span>
+                </div>
+                <a class="alink" href="javascript:void(0);">我是买家，如何找货？</a>
+                <a class="alink" href="javascript:void(0);">商城采购流程</a>
+                <a class="alink" href="javascript:void(0);">通过微信找货</a>
+                <a class="alink" href="javascript:void(0);">在线找车</a>
+            </li>
+            <li>
+                <div class="titlebox">
+                    <i class="icon icon2"></i>
+                    <span class="title">我要卖棉花</span>
+                </div>
+                <a class="alink" href="javascript:void(0);">我是卖家，如何销售？</a>
+                <a class="alink" href="javascript:void(0);">资源上传流程</a>
+                <a class="alink" href="javascript:void(0);">卖家如何直接报价？</a>
+                <a class="alink" href="javascript:void(0);">如何吸引更多买家？</a>
+            </li>
+            <li>
+                <div class="titlebox">
+                    <i class="icon icon3"></i>
+                    <span class="title">网站导航</span>
+                </div>
+                <a class="alink" href="javascript:void(0);">注册账号/登录网站</a>
+                <a class="alink" href="javascript:void(0);">无法登录/忘记密码</a>
+                <a class="alink" href="javascript:void(0);">会员中心</a>
+                <a class="alink" href="javascript:void(0);">修改账户设置</a>
+            </li>
+        </ul>
+        <div class="imgbox">
+            <img src="../images/index/img4.jpg" alt="kefu"/>
+        </div>
+    </div>
+    <div class="linfobox">
+        <div class="linfo">
+            <a href="javascript:void(0);">关于我们</a>
+            <a href="javascript:void(0);">法律声明</a>
+            <a href="javascript:void(0);">诚聘英才</a>
+            <a href="javascript:void(0);">联系我们</a>
+            <a href="javascript:void(0);">友情链接</a>
+        </div>
+        <p class="linfo2">
+            Copyright&nbsp;&nbsp;©&nbsp;&nbsp;2013-2015&nbsp;&nbsp;棉天下版权所有&nbsp;&nbsp;川ICP证100205号&nbsp;&nbsp;川ICP备09043401号
+        </p>
+    </div>
+</div>
+
+
+</body>
+</html>
